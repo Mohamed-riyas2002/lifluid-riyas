@@ -1,0 +1,29 @@
+<div class="main-div">
+    <div class="register-div">
+        <div class="form-div">
+            <%= image_tag('lifluid logo.png',alt: "logo",id:'reg-logo') %><br>
+            <% if flash[:error] %>
+            <p style='color: red; margin-left: 4%;'><%= flash[:error] %></p> 
+            <% end %>
+            <form action='/users/create' method='post'>
+                <input type='hidden'  name="authenticity_token" value=<%= form_authenticity_token%>>
+                <br>
+                <input type='text' name='user[name]' placeholder='Your Name'><br>
+                <br>
+                <input type='tel' name='user[phone_number]' pattern="[0-9]{10}" placeholder="Your Phone Number"><br>
+                <br>
+                <input type='email' name='user[email]' placeholder='Your Email'><br>
+                <br>
+                <input type='password' name='user[password]' id='password' maxlength="8" minlength="8" placeholder='Your Password'><br>
+                <br>
+                <input type='password' name='cpassword' minlength='8' maxlength="8" placeholder='Confirm Your Password'><br>
+                <br>
+                <button type="submit">SIGN UP</button>
+            </form>
+            <p class="sign-up-link">Already Have An Account ? <a href="/login">Sign In</a></p>
+        </div>
+        <div class='img-div'>
+            <%= image_tag('composite-image-blood-donation_1134-2579.webp', alt: "register-page-img", id: 'register-page-img')%>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blood_group: MyString
+  date_of_birth: 2022-07-26
+  last_donation_date: 2022-07-26
+  gender: MyString
+  state: MyString
+  district: MyString
+  pincode: 1
+
+two:
+  blood_group: MyString
+  date_of_birth: 2022-07-26
+  last_donation_date: 2022-07-26
+  gender: MyString
+  state: MyString
+  district: MyString
+  pincode: 1

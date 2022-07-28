@@ -1,0 +1,96 @@
+// Place all the styles related to the donors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.donor-register-cls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+.donor-register-div {
+    width: 70%;
+    display: grid;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
+    grid-template-columns: 50% 50%;
+    border-radius: 20px;
+}
+.form-div1 {
+    background-color: white;
+    color: #ff195e;
+    border-radius: 20px;
+}
+.form-div2 {
+    background-color: #ff195e;
+    color: white;
+    border-radius: 0 20px 20px 0;;
+}
+.donor-form-dropdown {
+    width: 70%;
+    height: 7vh;
+    margin-left: 13%;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #ccc;
+    color: rgb(60, 55, 55);
+    font-size: large;
+}
+.donor-form-input {
+    width: 68.5%;
+    height: 7vh;
+    margin-left: 13%;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #ccc;
+    color: rgb(60, 55, 55);
+    font-size: large;
+}
+.donor-form-label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 13%;
+}
+.donor-form-date {
+    width: 68.5%;
+    height: 7vh;
+    margin-left: 13%;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #ccc;
+    color: rgb(60, 55, 55);
+    font-size: large;
+}
+.donor-form-btn {
+    float: right;
+    margin-right: 18%;
+    margin-bottom: 2%;
+    background-color: #ff195e;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    width: 20%;
+    cursor: pointer;
+    height: 6vh;
+    border-radius: 5px;
+    border: transparent;
+}
+.register-avatar {
+    width: 40%;
+    margin-left: 28%;
+    margin-top: 10%;
+}
+#donor-name {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+#donor-email {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+#donor-phone-no {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+.donor-details span {
+    font-weight: lighter;
+    font-size: 25px;
+}

@@ -1,0 +1,23 @@
+<div class="main-div-login">
+    <div class="register-div">
+        <div class="form-div">
+            <%= image_tag('lifluid logo.png',alt: "logo",id:'reg-logo') %>
+            <% if flash[:error] %>
+            <p style='color: red; margin-left: 4%;'><%= flash[:error] %></p> 
+            <% end %>
+            <form action='/users/validate' method='post'>
+                <input type='hidden'  name="authenticity_token" value=<%= form_authenticity_token%>>
+                <br >
+                <input type="email" name="email" placeholder="TYPE EMAIL" style="text-indent:17px;" required><br>
+                <br>
+                <input type="password" name="password" minlength="8" placeholder="TYPE PASSWORD" required><br>
+                <br>
+                <button type="submit">SIGN IN</button>
+            </form>
+            <p class="sign-up-link">Don't have an account ? <a href="/users/register">Sign Up Now</a></p>
+        </div>
+        <div class='img-div'>
+            <%= image_tag('register-page-img.jpg', alt: "login-page-img", id: 'login-page-img')%>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,459 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+*{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.menu-content {
+    display: none;
+    position: absolute;
+    width: 400%;
+    margin-top: 0%;
+    margin-left: -130%;
+    z-index: 1;
+}
+.menu-content ul {
+    list-style-type: none;
+    margin-left: -20%;
+    margin-top: -0.1%;
+    width: 90%;
+}
+.menu-content ul li {
+    color: white;
+    width: 150%;
+    height: 40px;
+    margin-left: -55%;
+    margin-bottom: 1%;
+    background-color:  #ff195e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid black;
+    border-radius: 10px;
+}
+.menu-content ul li:hover {
+    background-color: white;
+    transition: 1s;
+}
+.menu-content ul li:hover a {
+    color: black;
+    transition: 1s;
+}
+.menu-content ul li a {
+    color: white;
+}
+.menu-content ul li p {
+    margin-left: 2%;
+    font-size: 120%;
+}
+.dropdown-menu {
+    position: relative;
+    width: 10%;
+    height: 140px;
+    float: right;
+}
+.profile {
+    width: 22%;
+    float: right;
+    top: 1%;
+    height: 7%;
+    right: 4%;
+    position: absolute;
+}
+.login-btn {
+    position: absolute;
+    left: 70%;
+    margin-top: 2%;
+    border: transparent;
+    font-size:x-large;
+    font-weight: 700;
+    border-radius: 25px;
+    width: 35%;
+    height: 80%;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(to right,#831133 15%,#ff195e);
+    -webkit-text-stroke: 0.2px black;
+}
+#profile-avatar {
+    width: 120%;
+    float: right;
+    margin-top: -180%;
+}
+.profile a{
+    text-decoration: none;
+    color: black;
+}
+.user-name {
+    width: 45%;
+    height: 4vh;
+    margin-top: 5%;
+    margin-left: 40%;
+    text-align: center;
+    font-size: x-large;
+}
+#top_panel{
+    margin: 0;
+    padding: 10px;
+}
+.nav_list li {
+    list-style-type: none;
+    padding-left: 50px;
+    font-size: larger;
+    font-weight: 450;
+    margin-top: 0.5%;
+}
+.nav_list li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 130%;
+    text-align: center;
+}
+.nav_list li a:hover {
+    background-color: #ff195e;
+    border-radius: 5px;
+    color: aliceblue;
+    transition: 0.4s;
+}
+.nav_list {
+    margin: 10px 0 10px;
+    width: auto;
+    display: inline-flex;
+    position: absolute;
+    top: 13px; 
+    left: 10%;
+}
+#logo {
+    width: 12%;
+    margin-left: 1%;
+}
+#home-img {
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+}
+#main_img {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+#main-text {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    line-height: 300%;
+}
+#main-text p {
+    font-size: xx-large;
+    font-weight:bolder;
+}
+#search-blood-div {
+    position: relative;
+    margin-top: -100px;
+    border-bottom: 2px solid black;
+    float: left;
+    left: 10%;
+    width: 20%;
+    height: 178px;
+    border-radius: 5px;
+    background-color: white;
+}
+#search-blood-div2 {
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    top: 80%;
+    left: 40%;
+    width: 20%;
+    height: 35%;
+    border-bottom: 2px solid black;
+}
+#search-blood-div3 {
+    position: absolute;
+    top: 80%;
+    right: 10%;
+    width: 20%;
+    height: 35%;
+    background-color: white;
+    border-radius: 5px;
+    border-bottom: 2px solid black;
+}
+#search-donor-img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+#blood-bank-img {
+    max-width: 100%;
+    height: 90%;
+}
+#blood-request-img {
+    width: 70%;
+    position: relative;
+    height: 90%;
+    border-radius: 5px;
+}
+.overlay {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(97, 94, 94, 0.7) 0%, rgba(97, 94, 94, 0.7) 100%);
+    color: black;
+    opacity: 0;
+    transition: opacity 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: xx-large;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 900;
+}
+// .overlay p {
+//     -webkit-text-stroke: 2px black;
+// }
+.overlay:hover {
+    opacity: 1;
+}
+.overlay > * {
+    transform: translateY(100px);
+    transition: transform 1s;
+}
+
+.overlay:hover > * {
+    transform: translateY(0);
+}
+#why_blood_div {
+    margin-top: 13%;
+    box-sizing: border-box;
+}
+#heading {
+    text-align: center;
+}
+#content {
+    background-color: aqua;
+    width: 100%;
+    height: 50%;
+}
+#content-box-1 {
+    background-color: white;
+    width: 25%;
+    height: 100%;
+    float: left;
+    margin-left: 8%;
+    color: black;
+    padding: 1%;
+    font-family: 'Work Sans', sans-serif;
+    line-height: 150%;
+}
+#content-box-1:hover {
+    box-shadow: 0 0 15px  rgba(23, 23, 23, 0.2);
+}
+#content-box-2 {
+    color: black;
+    width:  25%;
+    height: 100%;
+    float: left;
+    margin-left: 3%;
+    padding: 1%;
+    line-height: 150%;
+}
+#content-box-2:hover {
+    box-shadow: 0 0 15px  rgba(23, 23, 23, 0.2);
+}
+#content-box-3 {
+    color: black;
+    width:  25%;
+    height: 100%;
+    float: left;
+    margin-left: 3%;
+    padding: 1%;
+    padding-bottom: 2%;
+    line-height: 150%;
+}
+#content-box-3:hover{
+    box-shadow: 0 0 15px  rgba(23, 23, 23, 0.2);
+}
+.box-num {
+    text-align: center; 
+    color: #ff195e;
+    font-size: xx-large;
+}
+.images {
+    width: 200%;
+    height: 100%;
+    display: block;
+}
+.container {
+    width: 1000px;
+    margin: auto;
+    margin-top: 2%;
+}
+.gallery {
+    margin-top: 2%;
+    margin-left: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90.5%;
+    height: 500px;
+    float: left;
+    padding: 0px 30px;
+    background-color: rgba(184, 174, 174, 0.2);
+}
+.gallery .title h1 {
+    font-size: 36px;
+    margin: 0 0 30px;
+    color: #000000;
+    text-align: center;
+}
+.gallery .gallery-items .item {
+    float: left;
+    width: 25%;
+    position: relative;
+}
+.gallery .gallery-items .item.hide {
+    display: none;
+}
+.gallery .gallery-items .item.show {
+    display: block;
+    animation: show .5s ease;
+}
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.gallery .gallery-items .item .caption { 
+    margin-left: 230%;
+    margin-top: -90%;
+    width: 200%;
+    line-height: 150%;
+}
+.gallery .pagination {
+    position: absolute;
+    width: 50%;
+    float: left;
+    padding: 15px;
+    text-align: center;
+    margin-top: 12%;
+    bottom: -125%;
+    margin-left: 10%;
+}
+.gallery .pagination div {
+    display: inline-block;
+    margin: 0 10px;
+}
+.gallery .pagination .page {
+    color: gray;
+}
+.gallery .pagination .prev,.gallery .pagination .next {
+    color: #000;
+    border: 1px solid #000;
+    font-size: 15px;
+    padding: 7px 15px;
+    cursor: pointer;
+}
+.gallery .pagination .prev.disabled,.gallery .pagination .next.disabled {
+    border-color: gray;
+    color: gray;
+    pointer-events: none;
+}
+.main-div {
+    width: 100%;
+}
+.main-div-login {
+    width: 100%;
+    margin-top: 8%;
+}
+.register-div {
+    width: 75%;
+    margin-top: 2%;
+    margin-left: 12%;
+    display: grid;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
+    grid-template-columns: 45% 55%;
+    border-radius: 10px;
+}
+.form-div {
+    line-height: 200%;
+    padding-bottom: 30px;
+}
+.form-div input{
+    width: 60%;
+    text-align: center;
+    font-size: 120%;
+    height: 40px;
+    border-radius: 30px;
+    border-color: transparent;
+    margin-left: 20%;
+    background-color: rgba(220, 220, 220, 0.785);
+}
+.form-div input:focus {
+    background-color: white;
+    border-color: transparent;
+}
+.form-div label {
+    font-size:large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    margin-left: 23%;
+}
+.form-div button {
+    width: 61%;
+    height: 45px;
+    margin-left: 20%;
+    border-radius: 30px;
+    background-color: #ff195e;
+    color: white;
+    font-size: 20px;
+}
+.form-div button:hover {
+    background-color: white;
+    color: #ff195e;
+    transition: 0.5s;
+}
+#login-page-img {
+    width: 90%;
+    height: 100%;
+    float: right;
+    border-radius: 10px;
+    object-fit: cover;
+}
+#reg-logo {
+    width: 30%;
+    margin: 2% 0 0 35%;
+}
+.sign-up-link {
+    text-align: center;
+}
+.sign-up-link a {
+    text-decoration: none;
+    color: #ff195e;
+    font-weight: bold;
+}
+#register-page-img {
+    width: 100%;
+    height: 90%;
+    float: right;
+    border-radius: 10px;
+}
+.logout-btn {
+    margin-left: 5%;
+}
+.logout-btn button {
+    width: 40%;
+    height: 70%;
+    background-color: white;
+    color: #ff195e;
+    font-size: larger;
+    font-weight: 100;
+    margin-top: 2%;
+}

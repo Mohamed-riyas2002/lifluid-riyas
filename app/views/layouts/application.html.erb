@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lifluid</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="top_panel">
+      <a href="#" style="margin-left: 15px">
+        <%= image_tag('lifluid logo.png',alt: "logo",id:'logo') %>
+      </a>
+      <ul class="nav_list">
+        <li><a href="/users/index">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Admin</a></li>
+      </ul>
+      <div class="profile">
+        <p style="display: none;"><%= user= session[:user_id]%></p>
+        <% if session[:user_id]  %>
+          <p class='user-name'>Hi , <%= user["name"] %></p>
+          <div class="dropdown-menu">
+            <%= image_tag('avatar.png', alt: 'profile-avatar', id: 'profile-avatar',class: 'menu-btn') %>
+            <div class="menu-content">
+              <ul>
+                <li>
+                  <a href="#">Account</a>
+                </li>
+                <li>
+                  <a href="#">Register Blood Bank</a>
+                </li>
+                <li>
+                  <a href="/donors/donor_register">Be a Donor</a>
+                </li>
+                <li>
+                  <a href="/users/destroy">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <% else %>
+          <a href="/login"><button class='login-btn'>Login</button></a>
+        <% end %>
+      </div>
+    </div>
+    <%= yield %>
+    <%= javascript_pack_tag 'profile-dropdown.js'%>
+  </body>
+</html>

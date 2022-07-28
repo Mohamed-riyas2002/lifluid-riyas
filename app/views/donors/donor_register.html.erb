@@ -1,0 +1,96 @@
+<% for donor in 0...@donor_record.length do%>
+<% if @donor_record[donor].user_id == @user_record['id'] %>
+    <%= image_tag("registered-user.png",class: 'riyas')%>
+    <p>You already registered as a donor</p>
+<% end %>
+<% end %>
+<section class="donor-register-cls" style="display: none;">
+    <div class="donor-register-div">
+        <div class="form-div1">
+            <h1 style="text-align: center;">Donor Information</h1>
+            <form action='/donors/create' method='post'>
+                <input type='hidden'  name="authenticity_token" value=<%= form_authenticity_token%>>
+                <select class="donor-form-dropdown" name="donor[blood_group]" placeholder="Blood Group"required>
+                    <option value="">Blood Group</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>    
+                </select><br>
+                <br>
+                <input placeholder="Date Of Birth" name='donor[date_of_birth]' class="donor-form-date" type="text" onfocus="(this.type = 'date')" id="date" required><br>
+                <br>
+                <input type="text" placeholder="Last Date Of Donation" name='donor[last_donation_date]' class="donor-form-date" type="text" onfocus="(this.type = 'date')" id="date" required><br>
+                <br>
+                <select class="donor-form-dropdown" name='donor[gender]' required>
+                    <option value="">Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Transgender">Transgender</option>
+                </select><br>
+                <br>
+                <label for="state"></label>
+                <input type="text" class="donor-form-input" name="donor[state]" value="Tamilnadu" placeholder="TamilNadu" disabled><br>
+                <br>
+                <select class="donor-form-dropdown" name='donor[district]' required>
+                    <option value="">Select district</option>
+                    <option value="Ariyalur">Ariyalur</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Chengalpattu">Chengalpattu</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Cuddalore">Cuddalore</option>
+                    <option value="Dharmapuri">Dharmapuri</option>
+                    <option value="Dindugul">Dindugul</option>
+                    <option value="Erode">Erode</option>
+                    <option value="Kallakurichi">Kallakurichi</option>
+                    <option value="Kanchipuram">Kanchipuram</option>
+                    <option value="Kanyakumari">Kanyakumari</option>
+                    <option value="Karur">Karur</option>
+                    <option value="Krishnagiri">Krishnagiri</option>
+                    <option value="Madurai">Madurai</option>
+                    <option value="Mayiladuthura">Mayiladuthura</option>
+                    <option value="Nagapattinam">Nagapattinam</option>
+                    <option value="Namakkal">Namakkal</option>
+                    <option value="Nilgiris">Nilgiris</option>
+                    <option value="Perambalur">Perambalur</option>
+                    <option value="Pudukkottai">Pudukkottai</option>
+                    <option value="Ramanathapuram">Ramanathapuram</option>
+                    <option value="Ranipet">Ranipet</option>
+                    <option value="Salem">Salem</option>
+                    <option value="Sivagangai">Sivagangai</option>
+                    <option value="Tenkasi">Tenkasi</option>
+                    <option value="Thanjavur">Thanjavur</option>
+                    <option value="Theni">Theni</option>
+                    <option value="Tuticorin">Tuticorin</option>
+                    <option value="Trichy">Trichy</option>
+                    <option value="Tirunelveli">Tirunelveli</option>
+                    <option value="Tirupattur">Tirupattur</option>
+                    <option value="Tiruppur">Tiruppur</option>
+                    <option value="Tiruvallur">Tiruvallur</option>
+                    <option value="Tiruvannamalai">Tiruvannamalai</option>
+                    <option value="tiruvarur">tiruvarur</option>
+                    <option value="Vellore">Vellore</option>
+                    <option value="Villupuram">Villupuram</option>
+                    <option value="Virudhunagar">Virudhunagar</option>
+                </select><br>
+                <br>
+                <input type="number" name='donor[pincode]' class="donor-form-input" pattern="[0-9]{6}" placeholder="Pincode" required><br>
+                <br>
+                <button type="submit" class="donor-form-btn">Submit</button>
+            </form>
+        </div>
+        <div class="form-div2">
+            <p style="display: none;"><%= user = session[:user_id] %></p>
+            <%= image_tag('avatar.png', class: "register-avatar")%>
+            <div class="donor-details">
+                <p id="donor-name">Name : <span><%= user["name"]%></span></p>
+                <p id="donor-email">Email : <span><%= user["email"]%></span></p>
+                <p id="donor-phone-no">Phone no :<span><%= user["phone_number"]%></span></p>
+            </div>
+        </div>
+    </div>
+</section>
