@@ -1,0 +1,87 @@
+.main-search-div {
+    width: 100%;
+    height: 88vh;
+    background-image: url('blood-syringe.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.donor-search {
+    display: grid;
+    grid-template-columns: 40% 50%;
+}
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+}
+.form {
+    background-color: white;
+    border-radius: 10px;
+    width: 60%;
+    height: 53vh;
+    text-align: center;
+}
+.form input {
+    text-align: center;
+    width: 80%;
+    height: 5vh;
+    font-size: large;
+    border: none;
+    color: rgb(87, 87, 87);
+    background-color: rgba(208, 207, 207, 0.833);
+}
+.form select:focus {
+    background-color: white;
+}
+.form input:focus {
+    background-color: white;
+}
+.form select {
+    background-color: rgba(208, 207, 207, 0.833);
+    width: 81%;
+    height: 6vh;
+    font-size: large;
+    border: none;
+    color: rgb(87, 87, 87);
+    text-align: center;
+}
+.search-donor-quote {
+    text-align: center; 
+    font-size: 30px;
+    font-weight: bold;
+}
+.search-donor-btn {
+    width: 81%;
+    height: 5.5vh;
+    font-size: large;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.search-donor-btn:hover {
+    background-color: #ff195e;
+    color: white;
+}
+.donor {
+    margin-top: -8%; 
+    color: #ff195e;
+    font-size: large;
+    font-weight: bold;
+    position: absolute;
+    right: 30%;
+}
+.search_result {
+    width: 122.5vh;
+}
+.donor_details {
+    width: 78%;
+    background-color: white;
+    margin: 4% 10% 0 10%;
+}
+.donor_details table,th, td {
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px 80px 10px 16px;
+    text-align: center;
+}

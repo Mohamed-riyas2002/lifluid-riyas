@@ -1,19 +1,21 @@
-<div id='main_img'>
+<div id='main_img'>x
     <%= image_tag('main-img.png', alt: "home-img", id: 'home-img')%>
     <div id='main-text'>
         <p>Sometimes, Blood Can Do What <br>Money Cannot</p>
     </div>
     <div id='search-blood-div'>
-            <%= image_tag('blood-request.png', alt: "blood-request-img", id: 'blood-request-img')%>
-            <div class="overlay">
-                <p>Request Blood</p>
-            </div>
+        <%= image_tag('blood-request.png', alt: "blood-request-img", id: 'blood-request-img')%>
+        <div class="overlay">
+            <p>Request Blood</p>
+        </div>
     </div>
     <div id='search-blood-div2'>
-        <%= image_tag('search-donor.png', alt: "search-donor-img", id: 'search-donor-img')%>
-        <div class="overlay">
-            <p>Search Donor</p>
-        </div>
+        <a href="/search/search_donor">
+            <%= image_tag('search-donor.png', alt: "search-donor-img", id: 'search-donor-img')%>
+            <div class="overlay">
+                <p>Search Donor</p>
+            </div>
+        </a>
     </div>
     <div id='search-blood-div3'>
         <%= image_tag('blood bank.png', alt: "blood-bank-img", id: 'blood-bank-img')%>

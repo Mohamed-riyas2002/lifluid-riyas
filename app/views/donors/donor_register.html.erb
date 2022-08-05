@@ -1,10 +1,16 @@
 <% for donor in 0...@donor_record.length do%>
 <% if @donor_record[donor].user_id == @user_record['id'] %>
-    <%= image_tag("registered-user.png",class: 'riyas')%>
-    <p>You already registered as a donor</p>
+    <div class="notify">
+        <div class="notify-img">
+            <%= image_tag("registered-user.png",class: 'donor-img')%>
+        </div>
+        <div class="notify-msg">
+            <p><span>Hey !!!</span>You already registered as a donor..</p>
+        </div>
+    </div>
 <% end %>
 <% end %>
-<section class="donor-register-cls" style="display: none;">
+<section class="donor-register-cls">
     <div class="donor-register-div">
         <div class="form-div1">
             <h1 style="text-align: center;">Donor Information</h1>

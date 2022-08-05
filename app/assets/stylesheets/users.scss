@@ -56,8 +56,8 @@
 .profile {
     width: 22%;
     float: right;
-    top: 1%;
-    height: 7%;
+    top: 0%;
+    height: 8%;
     right: 4%;
     position: absolute;
 }
@@ -77,9 +77,9 @@
     -webkit-text-stroke: 0.2px black;
 }
 #profile-avatar {
-    width: 120%;
+    width: 160%;
     float: right;
-    margin-top: -180%;
+    margin-top: -170%;
 }
 .profile a{
     text-decoration: none;
@@ -88,10 +88,10 @@
 .user-name {
     width: 45%;
     height: 4vh;
-    margin-top: 5%;
+    margin-top: 3%;
     margin-left: 40%;
     text-align: center;
-    font-size: x-large;
+    font-size: large;
 }
 #top_panel{
     margin: 0;

@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_26_102023) do
+ActiveRecord::Schema.define(version: 2022_08_05_110734) do
+
+  create_table "blood_banks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "parent_hospital", default: "No Parent Organisation", null: false
+    t.integer "phone_number"
+    t.string "email"
+    t.string "address"
+    t.string "state"
+    t.string "district"
+    t.integer "pincode"
+    t.string "Category"
+    t.string "website", default: "No website", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "donors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "blood_group"

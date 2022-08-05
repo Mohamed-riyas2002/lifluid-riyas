@@ -1,6 +1,6 @@
 // Place all the styles related to the donors controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// You can   Sass (SCSS) here: https://sass-lang.com/
 .donor-register-cls {
     display: flex;
     align-items: center;
@@ -93,4 +93,23 @@
 .donor-details span {
     font-weight: lighter;
     font-size: 25px;
+}
+.donor-img {
+    width: 60%;
+}
+.notify {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 87vh;
+}
+.notify-img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.notify-msg {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 40px;
 }

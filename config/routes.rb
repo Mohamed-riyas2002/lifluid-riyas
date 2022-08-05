@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  get 'blood_bank/register_blood_bank'
+  get 'search/search_donor'
   get 'donors/donor_register'
   get 'users/index'
+  match 'blood_bank/register', to: 'blood_bank#create_blood_bank',via: :post
+  match 'search_query', to: 'search#search_query', via: :get
+  match '/search_query', to: 'search#search_query', via: :post
   match 'donors/create', to: 'donors#create', via: :post
   match 'login',to:'users#login', via: :get
   match 'users/register', to: 'users#register', via: :get

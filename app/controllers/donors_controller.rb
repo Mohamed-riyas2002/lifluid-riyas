@@ -15,7 +15,6 @@ class DonorsController < ApplicationController
   end
   private
   def user_params
-    
     params.require(:donor).permit(:blood_group, :dob, :date_of_birth, :last_donation_date, :gender, :state ,:district, :pincode)
   end
 end

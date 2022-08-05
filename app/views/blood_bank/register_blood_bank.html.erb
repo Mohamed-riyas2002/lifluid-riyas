@@ -1,0 +1,85 @@
+<section>
+    <div class="blood_bank_div">
+        <div class="blood-bank-form-div">
+            <div class="form-img">
+                <%= image_tag('edited cells.jpg',alt: "blood-bank-reg-img",class:'blood-bank-reg-img') %>
+            </div>
+            <div class="reg-form">
+                <h2 style="text-align: center; margin-top: 4%;">Register Your Blood Bank</h2>
+                <form action="/blood_bank/register" method="post">
+                    <div class="blood-bank-input">
+                        <input type='hidden'  name="authenticity_token" value=<%= form_authenticity_token%>>
+                        <input type="text" name="blood_banks[name]" placeholder="Blood Bank Name" required>
+                        <input style="margin-left: 5%;" type="text" name="blood_banks[parent_hospital]" placeholder="Parent Hospital Name (optional)">
+                    </div>
+                    <div class="blood-bank-input">
+                        <input type="tel" name="blood_banks[phone_number]" pattern="[0-9]{10}" placeholder="Phone Number" required>
+                        <input style="margin-left: 5%;" type="email" name="blood_banks[email]" placeholder="Email" required>
+                    </div>
+                    <div class="blood-bank-input">
+                        <input type="text" name="blood_banks[website]" placeholder="Website (optional)">
+                        <select name="blood_banks[Category]" style="margin-left: 5%;">
+                            <option value="">Category</option>
+                            <option value="Private">Private</option>
+                            <option value="Government">Government</option>
+                            <option value="Charitable">Charitable</option>
+                        </select>
+                    </div>
+                    <div class="blood-bank-input">
+                        <input type="text" name="blood_banks[state]" value="Tamilnadu" placeholder="TamilNadu" readonly>
+                        <select name="blood_banks[district]" style="margin-left: 5%;" required>
+                            <option value="">Select district</option>
+                            <option value="Ariyalur">Ariyalur</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Chengalpattu">Chengalpattu</option>
+                            <option value="Coimbatore">Coimbatore</option>
+                            <option value="Cuddalore">Cuddalore</option>
+                            <option value="Dharmapuri">Dharmapuri</option>
+                            <option value="Dindugul">Dindugul</option>
+                            <option value="Erode">Erode</option>
+                            <option value="Kallakurichi">Kallakurichi</option>
+                            <option value="Kanchipuram">Kanchipuram</option>
+                            <option value="Kanyakumari">Kanyakumari</option>
+                            <option value="Karur">Karur</option>
+                            <option value="Krishnagiri">Krishnagiri</option>
+                            <option value="Madurai">Madurai</option>
+                            <option value="Mayiladuthura">Mayiladuthura</option>
+                            <option value="Nagapattinam">Nagapattinam</option>
+                            <option value="Namakkal">Namakkal</option>
+                            <option value="Nilgiris">Nilgiris</option>
+                            <option value="Perambalur">Perambalur</option>
+                            <option value="Pudukkottai">Pudukkottai</option>
+                            <option value="Ramanathapuram">Ramanathapuram</option>
+                            <option value="Ranipet">Ranipet</option>
+                            <option value="Salem">Salem</option>
+                            <option value="Sivagangai">Sivagangai</option>
+                            <option value="Tenkasi">Tenkasi</option>
+                            <option value="Thanjavur">Thanjavur</option>
+                            <option value="Theni">Theni</option>
+                            <option value="Tuticorin">Tuticorin</option>
+                            <option value="Trichy">Trichy</option>
+                            <option value="Tirunelveli">Tirunelveli</option>
+                            <option value="Tirupattur">Tirupattur</option>
+                            <option value="Tiruppur">Tiruppur</option>
+                            <option value="Tiruvallur">Tiruvallur</option>
+                            <option value="Tiruvannamalai">Tiruvannamalai</option>
+                            <option value="tiruvarur">tiruvarur</option>
+                            <option value="Vellore">Vellore</option>
+                            <option value="Villupuram">Villupuram</option>
+                            <option value="Virudhunagar">Virudhunagar</option>
+                        </select>
+                    </div>
+                    <div class="blood-bank-input except" style="width: 40%; float: left;">
+                        <input type="number" name='blood_banks[pincode]' pattern="[0-9]{6}" placeholder="Pincode" required>
+                    </div>
+                    <div class="address-textarea"style="width: 40%; float: left;">
+                        <textarea name="blood_banks[address]" class="address-input" placeholder="Address" required></textarea>
+                    </div>
+                    <div class="register-btn-div">
+                        <button type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

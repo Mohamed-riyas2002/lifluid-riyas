@@ -21,26 +21,57 @@
         <li><a href="#">Admin</a></li>
       </ul>
       <div class="profile">
-        <p style="display: none;"><%= user= session[:user_id]%></p>
+        <p><% user= session[:user_id]%></p>
         <% if session[:user_id]  %>
           <p class='user-name'>Hi , <%= user["name"] %></p>
+          <% d_record = Donor.all %>
+          <% for donor in 0...d_record.length do%>
+            <% if d_record[donor].user_id == user['id'] %>
+              <p class='donor'>donor</p>
+            <% end %>
+          <% end %>
           <div class="dropdown-menu">
             <%= image_tag('avatar.png', alt: 'profile-avatar', id: 'profile-avatar',class: 'menu-btn') %>
             <div class="menu-content">
-              <ul>
-                <li>
-                  <a href="#">Account</a>
-                </li>
-                <li>
-                  <a href="#">Register Blood Bank</a>
-                </li>
-                <li>
-                  <a href="/donors/donor_register">Be a Donor</a>
-                </li>
-                <li>
-                  <a href="/users/destroy">Logout</a>
-                </li>
-              </ul>
+              <% for donor in 0...d_record.length do%>
+                <% if d_record[donor].user_id == user['id'] %>
+                  <% @presence = true%>
+                  <% break%>
+                <% else%>
+                  <% @presence= false %>
+                <% end %>
+              <% end %>
+                <% if @presence==true %>
+                  <ul>
+                    <li>
+                      <a href="#">Account</a>
+                    </li>
+                    <%# <li>
+                    <a href="/blood_bank/register_blood_bank">Register Blood Bank</a>
+                    </li> %>
+                    <li>
+                      <a href="/donors/donor_register">Be a Donor</a>
+                    </li>
+                    <li>
+                      <a href="/users/destroy">Logout</a>
+                    </li>
+                  </ul>
+                <% else %>
+                  <ul>
+                    <li>
+                      <a href="#">Account</a>
+                    </li>
+                    <li>
+                    <a href="/blood_bank/register_blood_bank">Register Blood Bank</a>
+                    </li>
+                    <li>
+                      <a href="/donors/donor_register">Be a Donor</a>
+                    </li>
+                    <li>
+                      <a href="/users/destroy">Logout</a>
+                    </li>
+                  </ul>
+                <% end %>
             </div>
           </div>
         <% else %>

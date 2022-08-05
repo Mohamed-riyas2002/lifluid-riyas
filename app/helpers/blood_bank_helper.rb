@@ -1,0 +1,2 @@
+module BloodBankHelper
+end
