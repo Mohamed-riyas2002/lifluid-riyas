@@ -3,6 +3,7 @@ class DonorsController < ApplicationController
     @user_record = session[:user_id]
     @donor_record = Donor.all
   end
+  
   def create
     donor = Donor.new(user_params)
     user_record = session[:user_id]

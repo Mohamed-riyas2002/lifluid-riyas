@@ -1,3 +1,15 @@
+<% for donor in 0...@blood_bank_record.length do%>
+<% if @blood_bank_record[donor].user_id == @user_record['id'] %>
+    <div class="notify">
+        <div class="notify-img">
+            <%= image_tag("registered-user.png",class: 'donor-img')%>
+        </div>
+        <div class="notify-msg">
+            <p><span>Hey !!!</span>You already registered your Blood Bank..</p>
+        </div>
+    </div>
+<% end %>
+<% end %>
 <section>
     <div class="blood_bank_div">
         <div class="blood-bank-form-div">

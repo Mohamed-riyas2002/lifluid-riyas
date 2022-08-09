@@ -22,6 +22,37 @@
     height: 53vh;
     text-align: center;
 }
+.blood-bank-form {
+    background-color: white;
+    border-radius: 10px;
+    width: 60%;
+    height: 45vh;
+    text-align: center;
+}
+.blood-bank-form input {
+    text-align: center;
+    width: 80%;
+    height: 5vh;
+    font-size: large;
+    border: none;
+    color: rgb(87, 87, 87);
+    background-color: rgba(208, 207, 207, 0.833);
+}
+.blood-bank-form select:focus {
+    background-color: white;
+}
+.blood-bank-form input:focus {
+    background-color: white;
+}
+.blood-bank-form select {
+    background-color: rgba(208, 207, 207, 0.833);
+    width: 81%;
+    height: 6vh;
+    font-size: large;
+    border: none;
+    color: rgb(87, 87, 87);
+    text-align: center;
+}
 .form input {
     text-align: center;
     width: 80%;
@@ -64,12 +95,12 @@
     color: white;
 }
 .donor {
-    margin-top: -8%; 
+    margin-top: -2%; 
     color: #ff195e;
     font-size: large;
     font-weight: bold;
     position: absolute;
-    right: 30%;
+    right: 20%;
 }
 .search_result {
     width: 122.5vh;
@@ -84,4 +115,37 @@
     border-collapse: collapse;
     padding: 10px 80px 10px 16px;
     text-align: center;
+}
+.else {
+    width: 100%;
+    margin-top: 30%;
+}
+#sorry {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+#sorry-img {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+}
+.no-donor-text {
+    display: inline-block;
+    margin-top: 14%;
+    font-size: 40px;
+}
+.else-blood_bank {
+    width: 100%;
+    margin-top: 30%;
+}
+.no-blood-bank {
+    display: inline-block;
+    margin-top: 8%;
+    font-size: 30px;
+}
+.search-deatils {
+    width: 100%;
+    background-color: white;
+    margin: 4% 0 0 0;
 }

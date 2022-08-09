@@ -65,42 +65,36 @@
                 </form>
             </div>
         </div>
-        <div class="search_result" id="search_result_div">
-                <div class="donor_details">
-                    <% donor_details = flash[:alert]%>
-                    <%# <% if @present_value == 1 %>
+        <div class="search_result">
+            <div class="donor_details">
+                <% donor_details = flash[:alert]%>
+                <% if @donor_details.length > 0  %>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Blood Group</th>
+                        <th>Phone Number</th>
+                        <th>Pincode</th>
+                    </tr>
                     <% if @donor_details.length > 0  %>
-                    <table>
+                    <% for i in 0...donor_details.length do %>
                         <tr>
-                            <th>Name</th>
-                            <th>Blood Group</th>
-                            <th>Phone Number</th>
-                            <th>Pincode</th>
+                            <td><%=  User.find(donor_details[i]['user_id'])["name"]  %></td>
+                            <td><%= donor_details[i]["blood_group"]%></td>
+                            <td><%=  User.find(donor_details[i]['user_id'])["phone_number"]%></td>
+                            <td><%= donor_details[i]["pincode"] %></td>
                         </tr>
-                        <% if @donor_details.length > 0  %>
-                        <% for i in 0...donor_details.length do %>
-                            <tr>
-                                <td><%=  User.find(donor_details[i]['user_id'])["name"]  %></td>
-                                <td><%= donor_details[i]["blood_group"]%></td>
-                                <td><%=  User.find(donor_details[i]['user_id'])["phone_number"]%></td>
-                                <td><%= donor_details[i]["pincode"] %></td>
-                            </tr>
-                        <% end %>
-                        <% elsif @donor_details.length < 0 %>
-                            <tr colspan="4">
-                                <td><p>Couldn't Find Donor</p></td>
-                            </tr>
-                        <% end %>
-                    </table>
                     <% end %>
-                    <%# <% end %>
+                    <% end %>
+                </table>
+                <% end %>
+                <div class='else'>
+                    <% if @riyas %>
+                        <%= image_tag('sorry.jpeg',alt: 'sorry.jpeg',id: 'sorry')%>
+                        <p class="no-donor-text"><%= @riyas %></p>
+                    <% end %>
                 </div>
+            </div>
         </div>
     </div>
 </div>
-<script>
-function showHideDiv(){
-    event.preventDefault();
-    document.getElementById("search_result_div").style.display = "block";
-}
-</script>

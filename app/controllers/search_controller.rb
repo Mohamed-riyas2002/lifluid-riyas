@@ -1,42 +1,36 @@
 class SearchController < ApplicationController
-  # @@present = 0
   def search_donor
-    # @present_value = presence
-    # @@present = 0
     @donor_details = []
-
     puts "========================="
     puts @donor_details === nil
-
     @donor_details = []
   end
 
   def search_query
-    # user = ApplicationController.index
-    # @@present = 1
-    puts params === nil
-
     if params[:blood_group] == nil
       return redirect_to "/search/search_donor"
     end
-
-
-      puts params[:blood_group]
-      @donor_details = Donor.where(blood_group: params[:blood_group], district: params[:district])
-      
-
+    @donor_details = Donor.where(blood_group: params[:blood_group], district: params[:district])
+    if params[:blood_group] != nil and @donor_details.length == 0
+      @riyas = "Couldn't Find The Donor"
+    end
     # search_query[0].user.name
-
     # blood = search_query[0].blood_group
     # user_name = search_query[0].user.name
-
-
-    # search_query.each do|search_query_element|
-    #   @user_details += User.find(search_query_element.user_id)
-    #   # @user_details_array.push(@user_details.name, @user_details.phone_number)
-    # end
     flash[:alert] =  @donor_details
-    # puts user_details_array
     render '/search/search_donor'
+  end
+  def search_blood_bank
+    @blood_bank_details = []
+  end
+  def query_blood_bank
+    if params[:district] == nil
+      return redirect_to "/search/search_blood_bank"
+    end
+    @blood_bank_details = BloodBank.where(district: params[:district])
+    if params[:district] != nil and @blood_bank_details.length == 0
+      @search = "Couldn't Find The Blood Bank Near You"
+    end
+    render '/search/search_blood_bank'
   end
 end

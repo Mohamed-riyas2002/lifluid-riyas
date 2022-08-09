@@ -1,0 +1,89 @@
+<section>
+    <div class="main-search-div">
+        <div class="donor-search">
+            <div class="search-form">
+                <div class="blood-bank-form">
+                    <p class='search-donor-quote'>Find The Blood Banks<br>Near You</p>
+                    <form action="/query_blood_bank" method='post'>
+                        <input type='hidden'  name="authenticity_token" value=<%= form_authenticity_token%>>
+                        <input type="text" name="state" value="Tamilnadu" placeholder="TamilNadu" readonly><br>
+                        <br>
+                        <select name="district" required>
+                            <option value="">Select district</option>
+                            <option value="Ariyalur">Ariyalur</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Chengalpattu">Chengalpattu</option>
+                            <option value="Coimbatore">Coimbatore</option>
+                            <option value="Cuddalore">Cuddalore</option>
+                            <option value="Dharmapuri">Dharmapuri</option>
+                            <option value="Dindugul">Dindugul</option>
+                            <option value="Erode">Erode</option>
+                            <option value="Kallakurichi">Kallakurichi</option>
+                            <option value="Kanchipuram">Kanchipuram</option>
+                            <option value="Kanyakumari">Kanyakumari</option>
+                            <option value="Karur">Karur</option>
+                            <option value="Krishnagiri">Krishnagiri</option>
+                            <option value="Madurai">Madurai</option>
+                            <option value="Mayiladuthura">Mayiladuthura</option>
+                            <option value="Nagapattinam">Nagapattinam</option>
+                            <option value="Namakkal">Namakkal</option>
+                            <option value="Nilgiris">Nilgiris</option>
+                            <option value="Perambalur">Perambalur</option>
+                            <option value="Pudukkottai">Pudukkottai</option>
+                            <option value="Ramanathapuram">Ramanathapuram</option>
+                            <option value="Ranipet">Ranipet</option>
+                            <option value="Salem">Salem</option>
+                            <option value="Sivagangai">Sivagangai</option>
+                            <option value="Tenkasi">Tenkasi</option>
+                            <option value="Thanjavur">Thanjavur</option>
+                            <option value="Theni">Theni</option>
+                            <option value="Tuticorin">Tuticorin</option>
+                            <option value="Trichy">Trichy</option>
+                            <option value="Tirunelveli">Tirunelveli</option>
+                            <option value="Tirupattur">Tirupattur</option>
+                            <option value="Tiruppur">Tiruppur</option>
+                            <option value="Tiruvallur">Tiruvallur</option>
+                            <option value="Tiruvannamalai">Tiruvannamalai</option>
+                            <option value="tiruvarur">tiruvarur</option>
+                            <option value="Vellore">Vellore</option>
+                            <option value="Villupuram">Villupuram</option>
+                            <option value="Virudhunagar">Virudhunagar</option>
+                        </select><br>
+                        <br>
+                        <button type="submit" class='search-donor-btn'>Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="search_result">
+                <div class="search-deatils">
+                    <% if @blood_bank_details.length > 0 %>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                                <th>Website</th>
+                                <th>Address</th>
+                            </tr>
+                            <% for i in 0...@blood_bank_details.length do%>
+                                <tr>
+                                    <td><%= @blood_bank_details[i]["name"]%></td>
+                                    <td><%= @blood_bank_details[i]["phone_number"]%></td>
+                                    <td><%= @blood_bank_details[i]["email"]%></td>
+                                    <td><%= @blood_bank_details[i]["website"]%></td>
+                                    <td><%= @blood_bank_details[i]["address"]%></td>
+                                </tr>
+                            <% end %>
+                        </table>
+                    <% end %>
+                    <div class='else-blood_bank'>
+                    <% if @search %>
+                        <%= image_tag('sorry.jpeg',alt: 'sorry.jpeg',id: 'sorry-img')%>
+                        <p class="no-blood-bank"><%= @search %></p>
+                    <% end %>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

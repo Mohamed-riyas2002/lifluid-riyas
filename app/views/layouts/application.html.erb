@@ -23,11 +23,25 @@
       <div class="profile">
         <p><% user= session[:user_id]%></p>
         <% if session[:user_id]  %>
-          <p class='user-name'>Hi , <%= user["name"] %></p>
+          <div class='user-name-div'>
+          <div  class='user-name'>
+            <p><%= user["name"].capitalize %></p>
+          </div>
+          </div>
           <% d_record = Donor.all %>
           <% for donor in 0...d_record.length do%>
             <% if d_record[donor].user_id == user['id'] %>
-              <p class='donor'>donor</p>
+              <div class='user-role'>
+                <p class='donor'>Donor</p>
+              </div>
+            <% end %>
+          <% end %>
+          <%b_record = BloodBank.all %>
+          <% for bloodbank in 0...b_record.length do%>
+            <% if b_record[bloodbank].user_id == user['id'] %>
+              <div class='user-role'>
+                <p class='donor'>Blood Bank</p>
+              </div>
             <% end %>
           <% end %>
           <div class="dropdown-menu">
