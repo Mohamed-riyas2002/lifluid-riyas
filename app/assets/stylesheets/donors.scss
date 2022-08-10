@@ -113,3 +113,56 @@
     align-items: center;
     font-size: 40px;
 }
+.blood-request-section {
+    width: 100%;
+    height: 87vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blood-request-main-div {
+    width: 80%;
+    height: 95%;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
+}
+.blood-request-main-div form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.patient-form-div {
+    background-color: white;
+    height: 82.7vh;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.request-blood-input {
+    width: 70%;
+    text-indent: 15px;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    word-spacing: 6px;
+    font-weight: 100;
+    height: 7%;
+    margin-left: 14%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(104, 103, 103);
+}
+.request-blood-select {
+    color: rgb(105, 105, 105);
+    width: 71%;
+    height: 7%;
+    margin-left: 14%;
+    letter-spacing: 0.5px;
+    word-spacing: 6px;
+    text-indent: 15px;
+    font-size: 20px;
+    font-weight: 100;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(104, 103, 103);
+}
+.contact-person-div {
+    background-color: #ff195e;
+}
