@@ -31,13 +31,12 @@ class UsersController < ApplicationController
     if cpassword == user[:password_digest]
       redirect_to root_path if user.save
     else
-      flash[:error] = user.errors.full_messages.join(',')
+      flash[:error] = "password is not same"
       redirect_to '/users/register'
     end
   end
 
   private
-
   def user_params
     params.require(:user).permit(:name, :email, :password_digest, :phone_number)
   end
