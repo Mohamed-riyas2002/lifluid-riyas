@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'donors/donor_register'
   get 'donors/request_blood'
   get 'users/index'
+  match 'donors/create_request', to: 'donors#create_request', via: :post
   match 'query_blood_bank', to: 'search#query_blood_bank', via: :get
   match 'query_blood_bank', to: 'search#query_blood_bank', via: :post
   match 'blood_bank/register', to: 'blood_bank#create_blood_bank', via: :post

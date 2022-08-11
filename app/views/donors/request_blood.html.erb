@@ -1,19 +1,20 @@
 <section class="blood-request-section">
     <div class='blood-request-main-div'>
-        <form>
+        <form action="/donors/create_request" method="post">
+            <input type='hidden'  name="authenticity_token" value=<%= form_authenticity_token%>>
             <div class="patient-form-div">
                 <p style="text-indent: 15%; color: #ff195e; font-size: 25px; font-weight: bold;">Patient Details</p>
-                <input class="request-blood-input" type="text" name="patient_name" placeholder="Patient Name" required><br>
+                <input class="request-blood-input" type="text" name="blood_requests[patient_name]" placeholder="Patient Name" required><br>
                 <br>
-                <input class="request-blood-input" type="number" name="age" placeholder="Age" required><br>
+                <input class="request-blood-input" type="number" name="blood_requests[age]" placeholder="Age" required><br>
                 <br>
-                <select class="request-blood-select" name="Gender" placeholder="Gender" required>
+                <select class="request-blood-select" name="blood_requests[gender]" placeholder="Gender" required>
                     <option value="">Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select><br>
                 <br>
-                <select class="request-blood-select" name="blood_group" placeholder="Blood Group"required>
+                <select class="request-blood-select" name="blood_requests[blood_group]" placeholder="Blood Group"required>
                     <option value="">Blood Group</option>
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
@@ -25,61 +26,64 @@
                     <option value="AB-">AB-</option>    
                 </select><br>
                 <br>
-                <input class="request-blood-input" type="text" name="state" value="Tamilnadu" placeholder="TamilNadu" disabled><br>
+                <input class="request-blood-input" type="text" name="blood_requests[reason]" placeholder="Reason For Requirement" required>
+                <p style="text-indent: 15%; color: #ff195e; font-size: 25px; font-weight: bold;">Hospital Details</p>
+                <input type="text" class="request-blood-input" name="blood_requests[hospital_name]" placeholder="Admitted Hospital Name" required><br>
                 <br>
-                <select class="request-blood-select" name='district' required>
-                    <option value="">Select district</option>
-                    <option value="Ariyalur">Ariyalur</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Chengalpattu">Chengalpattu</option>
-                    <option value="Coimbatore">Coimbatore</option>
-                    <option value="Cuddalore">Cuddalore</option>
-                    <option value="Dharmapuri">Dharmapuri</option>
-                    <option value="Dindugul">Dindugul</option>
-                    <option value="Erode">Erode</option>
-                    <option value="Kallakurichi">Kallakurichi</option>
-                    <option value="Kanchipuram">Kanchipuram</option>
-                    <option value="Kanyakumari">Kanyakumari</option>
-                    <option value="Karur">Karur</option>
-                    <option value="Krishnagiri">Krishnagiri</option>
-                    <option value="Madurai">Madurai</option>
-                    <option value="Mayiladuthura">Mayiladuthura</option>
-                    <option value="Nagapattinam">Nagapattinam</option>
-                    <option value="Namakkal">Namakkal</option>
-                    <option value="Nilgiris">Nilgiris</option>
-                    <option value="Perambalur">Perambalur</option>
-                    <option value="Pudukkottai">Pudukkottai</option>
-                    <option value="Ramanathapuram">Ramanathapuram</option>
-                    <option value="Ranipet">Ranipet</option>
-                    <option value="Salem">Salem</option>
-                    <option value="Sivagangai">Sivagangai</option>
-                    <option value="Tenkasi">Tenkasi</option>
-                    <option value="Thanjavur">Thanjavur</option>
-                    <option value="Theni">Theni</option>
-                    <option value="Tuticorin">Tuticorin</option>
-                    <option value="Trichy">Trichy</option>
-                    <option value="Tirunelveli">Tirunelveli</option>
-                    <option value="Tirupattur">Tirupattur</option>
-                    <option value="Tiruppur">Tiruppur</option>
-                    <option value="Tiruvallur">Tiruvallur</option>
-                    <option value="Tiruvannamalai">Tiruvannamalai</option>
-                    <option value="tiruvarur">tiruvarur</option>
-                    <option value="Vellore">Vellore</option>
-                    <option value="Villupuram">Villupuram</option>
-                    <option value="Virudhunagar">Virudhunagar</option>
-                </select><br>
-                <br>
-                <input class="request-blood-input" type="text" name="reason" placeholder="Reason For Requirement" required><br>
+                <div class='hospital-location'>
+                    <input title="Tamilnadu Only" type="text" name="blood_requests[state]" value="Tamilnadu" placeholder="TamilNadu" disabled>
+                    <select  name='blood_requests[district]' required>
+                        <option value="">Select District</option>
+                        <option value="Ariyalur">Ariyalur</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Chengalpattu">Chengalpattu</option>
+                        <option value="Coimbatore">Coimbatore</option>
+                        <option value="Cuddalore">Cuddalore</option>
+                        <option value="Dharmapuri">Dharmapuri</option>
+                        <option value="Dindugul">Dindugul</option>
+                        <option value="Erode">Erode</option>
+                        <option value="Kallakurichi">Kallakurichi</option>
+                        <option value="Kanchipuram">Kanchipuram</option>
+                        <option value="Kanyakumari">Kanyakumari</option>
+                        <option value="Karur">Karur</option>
+                        <option value="Krishnagiri">Krishnagiri</option>
+                        <option value="Madurai">Madurai</option>
+                        <option value="Mayiladuthura">Mayiladuthura</option>
+                        <option value="Nagapattinam">Nagapattinam</option>
+                        <option value="Namakkal">Namakkal</option>
+                        <option value="Nilgiris">Nilgiris</option>
+                        <option value="Perambalur">Perambalur</option>
+                        <option value="Pudukkottai">Pudukkottai</option>
+                        <option value="Ramanathapuram">Ramanathapuram</option>
+                        <option value="Ranipet">Ranipet</option>
+                        <option value="Salem">Salem</option>
+                        <option value="Sivagangai">Sivagangai</option>
+                        <option value="Tenkasi">Tenkasi</option>
+                        <option value="Thanjavur">Thanjavur</option>
+                        <option value="Theni">Theni</option>
+                        <option value="Tuticorin">Tuticorin</option>
+                        <option value="Trichy">Trichy</option>
+                        <option value="Tirunelveli">Tirunelveli</option>
+                        <option value="Tirupattur">Tirupattur</option>
+                        <option value="Tiruppur">Tiruppur</option>
+                        <option value="Tiruvallur">Tiruvallur</option>
+                        <option value="Tiruvannamalai">Tiruvannamalai</option>
+                        <option value="tiruvarur">tiruvarur</option>
+                        <option value="Vellore">Vellore</option>
+                        <option value="Villupuram">Villupuram</option>
+                        <option value="Virudhunagar">Virudhunagar</option>
+                    </select>
+                </div>
             </div>
             <div class="contact-person-div">
                 <p style="text-indent: 15%; color: white; font-size: 25px; font-weight: bold;">Contact Details</p>
-                <input type="text" class="contact-person-input" name="patient_guardian" placeholder="Patient Guardian" required><br>
+                <input type="text" class="contact-person-input" name="blood_requests[guardian]" placeholder="Patient Guardian" required><br>
                 <br>
-                <input type="tel" class="contact-person-input" pattern="[0-9]{10}" name="guardian_number" placeholder="Guardian Number" required><br>
+                <input type="tel" class="contact-person-input" pattern="[0-9]{10}" name="blood_requests[guardian_number]" placeholder="Guardian Number" required><br>
                 <br>
-                <input type="email" class="contact-person-input" name="email" placeholder="Email"required><br>
+                <input type="email" class="contact-person-input" name="blood_requests[email]" placeholder="Email"required><br>
                 <br>
-                <input class="contact-person-input" placeholder="Required Before" name='required_before' type="text" onfocus="(this.type = 'date')" id="date" required><br>
+                <input class="contact-person-input" placeholder="Required Before" name='blood_requests[required_before]' type="text" onfocus="(this.type = 'date')" id="date" required><br>
                 <br>
                 <button type="submit" class="request-btn">REQUEST</button>
             </div>
