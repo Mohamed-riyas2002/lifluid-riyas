@@ -4,14 +4,16 @@ class UsersController < ApplicationController
   def index; end
 
   def login; end
-
+  def contact
+    
+  end
   def register; end
-
+  # method for logout
   def destroy
     session.clear
     redirect_to root_path
   end
-
+  # Validating the login 
   def validate
     inputEmail = params[:email]
     password = params[:password]
@@ -24,7 +26,7 @@ class UsersController < ApplicationController
       redirect_to '/login'
     end
   end
-
+  # creating the user
   def create
     cpassword = params[:cpassword]
     user = User.new(user_params)

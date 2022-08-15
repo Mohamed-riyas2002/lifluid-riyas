@@ -10,15 +10,21 @@ class DonorsController < ApplicationController
   end
   def create_request
     request = BloodRequest.new(blood_request_params)
-    p "===================================================="
-    p request
     user_record = session[:user_id]
     request.user_id = user_record['id']
     if request.save
       redirect_to root_path
     else
       render plain: 'failed successfully'
-
+    end
+  end
+  def claim_request
+    name = params[:name]
+    request = BloodRequest.find_by(patient_name: name)
+    request.request_result = "claimed"
+    if request.save
+      ClaimRequestMailMailer.request_claimed.deliver_later
+      redirect_to root_path
     end
   end
   def create
@@ -38,6 +44,6 @@ class DonorsController < ApplicationController
     params.require(:donor).permit(:blood_group, :dob, :date_of_birth, :last_donation_date, :gender, :state, :district,:pincode)
   end
   def blood_request_params
-    params.require(:blood_requests).permit(:patient_name, :age, :gender, :blood_group, :reason, :hospital_name,:state, :district, :guardian, :guardian_number, :email, :required_before)
+    params.require(:blood_requests).permit(:patient_name, :age, :gender, :blood_group, :reason, :hospital_name,:state, :district, :guardian, :guardian_number, :email, :required_before, :blood_bag)
   end
 end

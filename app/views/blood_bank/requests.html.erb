@@ -1,0 +1,63 @@
+<section class="head_section">
+    <div class="blood_request_heading">
+        <p>Blood Requests</p>
+    </div>
+</section>
+<%# retreiving BloodRequest table.%>
+<% request_records = BloodRequest.all%>
+<%# retreiving blood bank table.%>
+<% blood_bank = BloodBank.all%>
+<%# retreiving current user record.%>
+<% user = session[:user_id]%>
+<%# retreiving BloodBank record using user id.%>
+<% blood_bank_record = BloodBank.find_by(user_id: user['id'])%>
+<%# displaying records according to blood banks district and the date given by requester.%>
+<section class="request_page">
+    <div class="inner-div">
+        <% if request_records.length > 0 %>
+            <% request_records.each do |record|%>
+                <% if record['request_result'] != "claimed"%>
+                    <% if blood_bank_record['district'] == record['district']%>
+                        <% if @today >= record['created_at'].strftime("%Y-%m-%d").to_date and @today <= record['required_before'] %>
+                            <div class="single_request">
+                                <div class="single_request_head">
+                                    <div class="image">
+                                        <%= image_tag('heart-pulse-solid.png', class: "heart-pulse-img")%>
+                                    </div>
+                                    <div class="emergency">Emergency Blood Needed</div>
+                                    <div class="post-date">Post Date : <%= record['created_at'].strftime("%m %b %Y")%></div>
+                                </div>
+                                <div class="request-info-area">
+                                    <div class="request-info">
+                                        <%= image_tag('bed-pulse.png', class: "request-info-icon")%>
+                                        <p><%= record['patient_name']%><p>
+                                    </div>
+                                    <div class="request-info">
+                                        <%= image_tag('droplet.png', class: "request-info-icon")%>
+                                        <p><%= record['blood_group']%></p>
+                                    </div>
+                                    <div class="request-info">
+                                        <%= image_tag('calendar-solid.png', class: "request-info-icon")%>
+                                        <p><%= record['required_before'].strftime("%m %b %Y")%></p>
+                                    </div>
+                                    <div class="request-info">
+                                        <%= image_tag('phone-solid.png', class: "request-info-icon")%>
+                                        <p><%= record['guardian_number']%></p>
+                                    </div>
+                                    
+                                    <div class="div-btn">
+                                        <a href="/donors/claim_request/?name=<%=record['patient_name']%>">
+                                            <button type="submit">Claim Request</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% else %>
+            <p>riyas</p>
+        <% end %>
+    </div>
+</section>

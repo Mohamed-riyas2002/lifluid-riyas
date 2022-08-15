@@ -58,27 +58,27 @@
                 <div class="search-deatils">
                     <% if @blood_bank_details.length > 0 %>
                         <table>
-                            <tr>
-                                <th>Name</th>
-                                <th>Phone Number</th>
-                                <th>Email</th>
-                                <th>Website</th>
-                                <th>Address</th>
-                            </tr>
                             <% for i in 0...@blood_bank_details.length do%>
-                                <tr>
-                                    <td><%= @blood_bank_details[i]["name"]%></td>
-                                    <td><%= @blood_bank_details[i]["phone_number"]%></td>
-                                    <td><%= @blood_bank_details[i]["email"]%></td>
-                                    <td><%= @blood_bank_details[i]["website"]%></td>
-                                    <td><%= @blood_bank_details[i]["address"]%></td>
-                                </tr>
+                            <tr>
+                                <th style="color: #ff195e;"><%= @blood_bank_details[i]["name"]%></th>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th><td><%= @blood_bank_details[i]["phone_number"]%></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th><td><%= @blood_bank_details[i]["email"]%></td>
+                            </tr>
+                            <tr>
+                                <th>Website</th><td><%= @blood_bank_details[i]["website"]%></td>
+                            </tr>
+                                <th>Address</th><td><%= @blood_bank_details[i]["address"]%></td>
+                            </tr>
                             <% end %>
                         </table>
                     <% end %>
                     <div class='else-blood_bank'>
                     <% if @search %>
-                        <%= image_tag('sorry.jpeg',alt: 'sorry.jpeg',id: 'sorry-img')%>
+                        <%= image_tag('sorry.png',alt: 'sorry.jpeg',id: 'sorry-img')%>
                         <p class="no-blood-bank"><%= @search %></p>
                     <% end %>
                 </div>

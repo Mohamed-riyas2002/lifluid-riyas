@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_10_132100) do
+ActiveRecord::Schema.define(version: 2022_08_14_081324) do
 
   create_table "blood_banks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2022_08_10_132100) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.integer "blood_bag"
+    t.string "request_result"
     t.index ["user_id"], name: "index_blood_requests_on_user_id"
   end
 

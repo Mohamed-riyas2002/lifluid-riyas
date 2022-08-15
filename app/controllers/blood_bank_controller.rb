@@ -1,11 +1,12 @@
-# frozen_string_literal: true
-
 class BloodBankController < ApplicationController
   def register_blood_bank
     @blood_bank_record = BloodBank.all
     @user_record = session[:user_id]
   end
-
+  def requests
+    require 'date'
+    @today = Date.today
+  end
   def create_blood_bank
     if (user_params[:website] == '') && (user_params[:parent_hospital] != '')
       blood_bank = BloodBank.new(name: user_params[:name], parent_hospital: user_params[:parent_hospital],
@@ -28,7 +29,6 @@ class BloodBankController < ApplicationController
       render plain: 'Failed Successfully'
     end
   end
-
   private
 
   def user_params
