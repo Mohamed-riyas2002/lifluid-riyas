@@ -7,11 +7,10 @@ class ClaimRequestMailMailer < ApplicationMailer
   #
   def request_claimed
     @greeting = "Hi"
-
+    @current_user = params[:user]
     mail(
-      from: "rasoolmohamed669@gmail.com",
       to: "riyasmohamed1947@gmail.com",
-      subject: "Your Request is claimed and Your blood will deliver to the respective hsopital within today."
+      subject: "Your Request is claimed."
     )
   end
 end

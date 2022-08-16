@@ -25,7 +25,7 @@
                                         <%= image_tag('heart-pulse-solid.png', class: "heart-pulse-img")%>
                                     </div>
                                     <div class="emergency">Emergency Blood Needed</div>
-                                    <div class="post-date">Post Date : <%= record['created_at'].strftime("%m %b %Y")%></div>
+                                    <div class="post-date">Post Date : <%= record['created_at'].strftime("%Y-%m-%d")%></div>
                                 </div>
                                 <div class="request-info-area">
                                     <div class="request-info">
@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="request-info">
                                         <%= image_tag('calendar-solid.png', class: "request-info-icon")%>
-                                        <p><%= record['required_before'].strftime("%m %b %Y")%></p>
+                                        <p><%= record['required_before']%></p>
                                     </div>
                                     <div class="request-info">
                                         <%= image_tag('phone-solid.png', class: "request-info-icon")%>
@@ -56,8 +56,6 @@
                     <% end %>
                 <% end %>
             <% end %>
-        <% else %>
-            <p>riyas</p>
         <% end %>
     </div>
 </section>

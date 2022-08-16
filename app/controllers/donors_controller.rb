@@ -23,7 +23,7 @@ class DonorsController < ApplicationController
     request = BloodRequest.find_by(patient_name: name)
     request.request_result = "claimed"
     if request.save
-      ClaimRequestMailMailer.request_claimed.deliver_later
+      ClaimRequestMailMailer.with(user: session[:user_id], r_record: request).request_claimed.deliver_now
       redirect_to root_path
     end
   end
