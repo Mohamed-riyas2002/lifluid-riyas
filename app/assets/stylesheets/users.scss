@@ -501,6 +501,8 @@
     text-align: center;
     height: 20%;
     border-radius: 1rem;
+    font-size: medium;
+    font-weight: 600;
     outline: none;
     border: 1px solid #ff195e;;
 }
@@ -524,6 +526,8 @@
     border-radius: 5px;
     text-align: center;
     outline: none;
+    font-size: medium;
+    font-weight: 600;
     border: #ff195e 1px solid;
     resize: vertical;
 }
@@ -531,4 +535,42 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.footer {
+    margin-top: 8%;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    background-color: black;
+    position: absolute;
+    top: 208%;
+    width: 98%;
+}
+#copyrights-text {
+    font-size: 100%;
+    color: white;
+}
+#social_links {
+    height: 30%;
+}
+#social_links img:hover {
+    transform: rotateY(360deg);
+    transition: 2s;
+}
+.linked-in-icon {
+    width: 25%;
+    float: right; 
+    margin-top: 1%; 
+    padding-left: 2%;
+}
+.facebook-icon {
+    margin-top: 1%; 
+    float: right; 
+    padding-left: 2%;
+    width: 30%;
+}
+.developed-text {
+    position: absolute;
+    left: 40%;
+    bottom: 4%;
+    z-index: 3;
 }
