@@ -17,8 +17,8 @@
       </a>
       <ul class="nav_list">
         <li><a href="/users/index">Home</a></li>
-        <li><a href="#">Contact</a></li>
         <li><a href="#">Admin</a></li>
+        <li><a href="/users/contact">Contact</a></li>
       </ul>
       <div class="profile">
         <p><% user= session[:user_id]%></p>
@@ -51,8 +51,8 @@
                 <% if d_record[donor].user_id == user['id'] %>
                   <% @presence = true%>
                   <% break%>
-                <% else%>
-                  <% @presence= false %>
+                  <% else %>
+                  <% @presence = false %> 
                 <% end %>
               <% end %>
                 <% if @presence==true %>
@@ -70,7 +70,14 @@
                       <a href="/users/destroy">Logout</a>
                     </li>
                   </ul>
-                <% else %>
+                <% end %>
+                <% for bloodbank in 0...b_record.length do%>
+                  <% if b_record[bloodbank].user_id == user['id'] %>
+                    <% @bank_presence = true%>
+                    <% break%>
+                  <% end %>
+                <% end %>
+                <% if @bank_presence==true %>
                   <ul>
                     <li>
                       <a href="#">Account</a>
@@ -79,7 +86,7 @@
                     <a href="/blood_bank/register_blood_bank">Register Blood Bank</a>
                     </li>
                     <li>
-                      <a href="/donors/donor_register">Be a Donor</a>
+                      <a href="/blood_bank/requests">Blood Requests</a>
                     </li>
                     <li>
                       <a href="/users/destroy">Logout</a>

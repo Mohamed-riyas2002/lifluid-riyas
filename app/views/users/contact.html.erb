@@ -1,0 +1,26 @@
+<section class='contact-section'>
+    <div class="contact-main-div">
+        <div class="contct-form-img">
+            <%= image_tag('rocket-contact.png', alt: 'contct-img', id: 'contact-rocket')%>
+        </div>
+        <div class="contact-form">
+            <h3 style="color: #ff195e;">Drop Us a Message</h3>
+            <form>
+                <div class="container-form">
+                    <div class="form-col-1">
+                        <input type="text" name="name" placeholder="Your Name" required><br>
+                        <br>
+                        <input type="email" name="email" placeholder="Your Email" required><br>
+                        <br>
+                        <input type="tel" name="phone_no" placeholder="Your Number" required><br>
+                        <br>
+                        <button type="submit">Send Message</button>
+                    </div>
+                    <div class="form-col-2">
+                        <textarea name="address" class="message-input" placeholder="Address" required></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

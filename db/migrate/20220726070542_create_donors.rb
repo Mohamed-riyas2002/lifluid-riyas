@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateDonors < ActiveRecord::Migration[6.1]
   def change
     create_table :donors do |t|
@@ -13,4 +15,4 @@ class CreateDonors < ActiveRecord::Migration[6.1]
       t.timestamps
     end
   end
-en
+end

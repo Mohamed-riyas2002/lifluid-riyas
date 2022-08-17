@@ -1,0 +1,5 @@
+<p>
+  <%= @greeting %>, thanks for requesting blood from lifluid
+  <% blood_bank_record = BloodBank.find_by(user_id: @current_user['id'])%>
+  Your Request accepted by <b><%= blood_bank_record['name']%></b> and the requested blood will deliver today.
+</p>
