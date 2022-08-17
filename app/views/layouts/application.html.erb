@@ -51,6 +51,8 @@
                 <% if d_record[donor].user_id == user['id'] %>
                   <% @presence = true%>
                   <% break%>
+                  <% else %>
+                  <% @presence = false %> 
                 <% end %>
               <% end %>
                 <% if @presence==true %>
