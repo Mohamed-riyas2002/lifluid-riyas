@@ -6,7 +6,11 @@ class DonorsController < ApplicationController
     @donor_record = Donor.all
   end
 
-  def request_blood; end
+  def request_blood
+    if session[:user_id] ==  nil
+      redirect_to "/login"
+    end
+  end
 
   def create_request
     request = BloodRequest.new(blood_request_params)
